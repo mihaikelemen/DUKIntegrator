@@ -1,6 +1,4 @@
-# DUKIntegrator dockerization
-
-This is a solution to dockerize DUKIntegrator made by ANAF. Inspired by this [repository](https://github.com/IncrementalCommunity/declaratii-anaf) made by [IncrementalCommunity](https://github.com/IncrementalCommunity)
+This solution dockerize DUKIntegrator application made by ANAF and allows to be used serverside. Inspired by this [repository](https://github.com/IncrementalCommunity/declaratii-anaf) made by [IncrementalCommunity](https://github.com/IncrementalCommunity)
 This image only validates the declaration requested and on success will generate a PDF file.
 
 This image has support for the following declarations (@todo add all supported declarations):
