@@ -1,7 +1,5 @@
-# DUKIntegrator dockerization
-
-This is a solution to dockerize DUKIntegrator made by ANAF. Inspired by this [repository](https://github.com/IncrementalCommunity/declaratii-anaf) made by [IncrementalCommunity](https://github.com/IncrementalCommunity)
-This image only validates the declaration and on success will generate a PDF file for it.
+This solution dockerize DUKIntegrator application made by ANAF and allows to be used serverside. Inspired by this [repository](https://github.com/IncrementalCommunity/declaratii-anaf) made by [IncrementalCommunity](https://github.com/IncrementalCommunity)
+This image only validates the declaration requested and on success will generate a PDF file.
 
 This image has support for the following declarations (@todo add all supported declarations):
 
@@ -13,15 +11,15 @@ This image has support for the following declarations (@todo add all supported d
 ## Usage
 
 You can build the image by yourself using the general approach of building docker images.
-After this stage you can use make use of this tool by running docker image.
+After this stage you can use make use of this tool by running the docker image.
 
-The idea behind this approach you can mount `-v` your current path `$PWD` where your xml declarations are stored and pass the `ID` declaration name. The container will output a 'smart' pdf having the same name as the declation id passed as the argument. The `/app/host` if the path where the current path will be mouted inside the image
+The idea behind this approach you can mount `-v` your current path `$PWD` where your xml declarations are located and pass the `ID` of the declaration name. The container will output a *smart* pdf having the same name as the declaration id passed as the argument. The `/app/host` is the path to be mounted inside the image.
 
 ~~~bash
 docker run -e ID=106 --rm -v "$PWD:/app/host" dukintegrator:1.0
 ~~~
 
-**IMPORTANT** make sure you name your xml file as the declaration. If you want to validate D106 (declation no. 106) you must name your xml file as `D106.xml`
+**IMPORTANT** make sure you name your xml file as the declaration. For example: if you want to validate D106 (eg. declaration no. 106) you must name your xml file as `D106.xml`
 
 ## References
 
