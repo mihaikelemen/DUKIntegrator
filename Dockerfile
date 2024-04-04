@@ -1,5 +1,5 @@
-FROM openjdk:16-jdk-alpine AS java
-RUN apk add wget unzip
+FROM alpine:3.19
+RUN apk add openjdk11-jre && rm -rf /var/cache/apk/*
 
 ENV ID=000
 ENV HOST=/app/host
@@ -8,12 +8,11 @@ WORKDIR /app
 RUN adduser -u 1000 --disabled-password --gecos "" appuser && chown -R appuser /app
 
 USER appuser
-RUN wget https://static.anaf.ro/static/DUKIntegrator/dist_javaInclus20200203.zip -O /app/DUKIntegrator.zip
-RUN unzip /app/DUKIntegrator.zip -d /app
-RUN mv /app/dist/* /app/
 RUN mkdir -p $HOST
-RUN rm /app/DUKIntegrator.zip
-
+COPY ./dist/config /app/
+COPY ./dist/lib /app/
+COPY ./dist/*.jar /app/
+# additional libraries
 COPY ./lib/* /app/lib/
 
-CMD java -jar ./DUKIntegrator.jar -p D$ID $HOST/D$ID.xml $HOST/D$ID.log 0 0 $HOST/file-D$ID.pdf
+CMD java -version=1.6 -jar ./DUKIntegrator.jar -p D$ID $HOST/D$ID.xml $HOST/status.log 0 0 $HOST/file-D$ID.pdf
