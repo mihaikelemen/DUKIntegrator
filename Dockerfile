@@ -1,5 +1,4 @@
-FROM alpine:3.19
-RUN apk add openjdk11-jre && rm -rf /var/cache/apk/*
+FROM openjdk:8-jre-alpine
 
 ENV ID=000
 ENV HOST=/app/host
@@ -8,11 +7,11 @@ WORKDIR /app
 RUN adduser -u 1000 --disabled-password --gecos "" appuser && chown -R appuser /app
 
 USER appuser
-RUN mkdir -p $HOST
-COPY ./dist/config /app/
-COPY ./dist/lib /app/
+RUN mkdir -p $HOST && mkdir -p /app/lib && mkdir -p /app/config
+COPY ./dist/config/* /app/config
+COPY ./dist/lib/* /app/lib/
 COPY ./dist/*.jar /app/
 # additional libraries
 COPY ./lib/* /app/lib/
 
-CMD java -version=1.6 -jar ./DUKIntegrator.jar -p D$ID $HOST/D$ID.xml $HOST/status.log 0 0 $HOST/file-D$ID.pdf
+CMD java -jar ./DUKIntegrator.jar -p D$ID $HOST/D$ID.xml $HOST/status.log 0 0 $HOST/file-D$ID.pdf

@@ -5,9 +5,10 @@
 # @Author: Mihai KELEMEN <mihai@webmanage.ro>
 
 DUKIntegratorURL=https://static.anaf.ro/static/DUKIntegrator/dist_javaInclus20200203.zip
-VERSION=1.1
+VERSION=1.2
 
 wget $DUKIntegratorURL -O DUKIntegrator.zip && unzip -qq DUKIntegrator.zip -d $PWD && rm DUKIntegrator.zip
+cp ./dist/lib/* ./lib
 docker build --no-cache -t dukintegrator:$VERSION -f ./Dockerfile .
 docker save -o ./dukintegrator-v$VERSION.tar.gz dukintegrator:$VERSION
 
