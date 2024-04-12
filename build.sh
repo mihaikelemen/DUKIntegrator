@@ -5,7 +5,7 @@
 # @Author: Mihai KELEMEN <mihai@webmanage.ro>
 
 DUKIntegratorURL=https://static.anaf.ro/static/DUKIntegrator/dist_javaInclus20200203.zip
-VERSION=1.2
+VERSION=1.3
 
 wget $DUKIntegratorURL -O DUKIntegrator.zip && unzip -qq DUKIntegrator.zip -d $PWD && rm DUKIntegrator.zip
 cp ./dist/lib/* ./lib
