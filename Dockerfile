@@ -2,8 +2,9 @@ FROM openjdk:8-jre-alpine
 
 ENV ID=000
 ENV HOST=/app/host
-ENV XML=$ID
-ENV PDF=$ID
+ENV XML=$ID.xml
+ENV PDF=$ID.pdf
+ENV LOG=dukintegrator.log
 
 WORKDIR /app
 RUN adduser -u 1000 --disabled-password --gecos "" appuser && chown -R appuser /app
@@ -16,4 +17,4 @@ COPY ./dist/*.jar /app/
 # additional libraries
 COPY ./lib/* /app/lib/
 
-CMD java -jar ./DUKIntegrator.jar -p D$ID $HOST/$XML.xml $HOST/duk.log 0 0 $HOST/$PDF.pdf
+CMD java -jar ./DUKIntegrator.jar -p D$ID $HOST/$XML $HOST/$LOG 0 0 $HOST/$PDF
