@@ -21,16 +21,16 @@ Accepted enviroment variables:
 - PDF: the resulting PDF file, without extension. default is `ID.pdf`
 
 ### Examples 
-- Your xml file has the following naming convention `D100.xml`. The resulting PDF file will follow the same rule `D100.pdf`
+- Your xml file has the following naming convention `100.xml`. The resulting PDF file will follow the same rule `100.pdf`
 
 ~~~bash
-docker run -e ID=100 --rm -v "$PWD:/app/host" dukintegrator:1.4
+docker run -e ID=100 --rm -v "$PWD:/app/host" dukintegrator:1.5
 ~~~
 
 - Your xml file has a different naming `D100_1234_1232232.xml` and the resulting PDF file to be `d100_validation.pdf`
 
 ~~~bash
-docker run -e ID=100 -e XML=D100_1234_1232232 -e PDF=d100_validation --rm -v "$PWD:/app/host" dukintegrator:1.4
+docker run -e ID=100 -e XML=D100_1234_1232232 -e PDF=d100_validation --rm -v "$PWD:/app/host" dukintegrator:1.5
 ~~~
 
 ## References
