@@ -5,9 +5,9 @@
 # @Author: Mihai KELEMEN <mihai@webmanage.ro>
 
 DUKIntegratorURL=https://static.anaf.ro/static/DUKIntegrator/dist_javaInclus20200203.zip
-D112URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D112_20240823.zip
-D100URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D100_11072024.zip
-VERSION=1.6.1
+D112URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D112_26112024.zip
+D100URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D100_13012025.zip
+VERSION=1.6.2
 
 wget $DUKIntegratorURL -O DUKIntegrator.zip && unzip -qq DUKIntegrator.zip -d $PWD && rm DUKIntegrator.zip
 cp ./dist/lib/* ./lib
