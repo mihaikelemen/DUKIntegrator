@@ -6,8 +6,8 @@
 
 DUKIntegratorURL=https://static.anaf.ro/static/DUKIntegrator/dist_javaInclus20200203.zip
 D112URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D112_02042025.zip
-D100URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D100_05032025.zip
-VERSION=1.6.3
+D100URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D100_23052025.zip
+VERSION=1.6.4
 
 wget $DUKIntegratorURL -O DUKIntegrator.zip && unzip -qq DUKIntegrator.zip -d $PWD && rm DUKIntegrator.zip
 cp ./dist/lib/* ./lib
