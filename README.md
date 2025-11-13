@@ -16,9 +16,10 @@ The idea behind this approach you can mount `-v` your current path `$PWD` where 
 
 Accepted enviroment variables:
 
-- ID: declaration ID (required)
-- XML: the xml file to be validated, without extension. default is `ID.xml`
-- PDF: the resulting PDF file, without extension. default is `ID.pdf`
+- `ID`: declaration ID (required)
+- `XML_FILE`: the XML declaration file that needs to be validated, without extension (optional).
+- `PDF_FILE`: the resulting PDF file, without extension (optional).
+- `LOG_FILE`: log file. Defaults to *dukintegrator.log* (optional).
 
 ### Examples 
 - Your xml file has the following naming convention `100.xml`. The resulting PDF file will follow the same rule `100.pdf`
