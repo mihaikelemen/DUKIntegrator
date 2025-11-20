@@ -31,7 +31,7 @@ docker run -e ID=100 --rm -v "$PWD:/app/host" dukintegrator:1.7.0
 - Your xml file has a different naming `D100_1234_1232232.xml` and the resulting PDF file to be `d100_validation.pdf`
 
 ~~~bash
-docker run -e ID=100 -e XML=D100_1234_1232232 -e PDF=d100_validation --rm -v "$PWD:/app/host" dukintegrator:1.7.0
+docker run -e ID=100 -e XML_FILE=D100_1234_1232232 -e PDF_FILE=d100_validation --rm -v "$PWD:/app/host" dukintegrator:1.7.0
 ~~~
 
 ## References
