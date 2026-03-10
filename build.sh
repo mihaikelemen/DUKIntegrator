@@ -4,10 +4,12 @@
 # This script is used to build the project and create the distribution package
 # @Author: Mihai KELEMEN <mihai@webmanage.ro>
 
+source "$(dirname "$0")/.env"
+VERSION=${DUKINTERGRATOR_VERSION}
+
 DUKIntegratorURL=https://static.anaf.ro/static/DUKIntegrator/dist_javaInclus20200203.zip
-D112URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D112_07102025.zip
-D100URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D100_03072025.zip
-VERSION=1.7.0
+D112URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D112Validator_03022026.zip
+D100URL=https://static.anaf.ro/static/10/Anaf/Declaratii_R/AplicatiiDec/D100_22012026.zip
 
 wget $DUKIntegratorURL -O DUKIntegrator.zip && unzip -qq DUKIntegrator.zip -d $PWD && rm DUKIntegrator.zip
 cp ./dist/lib/* ./lib
