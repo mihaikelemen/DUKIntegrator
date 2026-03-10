@@ -1,6 +1,7 @@
 #!/bin/bash
 
-IMAGE="dukintegrator:1.7.0"
+source "$(dirname "$0")/.env"
+IMAGE="dukintegrator:${DUKINTERGRATOR_VERSION}"
 
 assert_command() {
     local expected="$1"
@@ -17,7 +18,7 @@ assert_command() {
     fi
 }
 
-echo "Testing scenarios..."
+echo "Running tests for DUKIntegrator v${DUKINTERGRATOR_VERSION}..."
 
 assert_command "java -jar ./DUKIntegrator.jar -p D100 /app/host/D100.xml /app/host/dukintegrator.log 0 0 /app/host/D100.pdf" \
     -e ID=100
